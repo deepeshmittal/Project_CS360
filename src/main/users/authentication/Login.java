@@ -1,14 +1,17 @@
-package main;
+package main.users.authentication;
 
+import java.io.File;
 import java.io.IOException;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import src.main.users.authentication.Authenticator;
+import main.users.user.Patient;
+import main.users.user.RegisteredUser;
 
 /**
  * Servlet implementation class Login
@@ -38,8 +41,13 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String username = request.getParameter("email");
 		String password = request.getParameter("password");
-
-		if(Authenticator.getInstance().authenticate(username, password)) {
+		
+		String path = request.getServletContext().getRealPath("/WEB-INF/classes/resources/registered_users");
+		RegisteredUser user =Authenticator.getInstance(path).authenticate(username, password); 
+		if( user!= null) {
+			Patient patient = (Patient) user;
+			/**request.getSession().setAttribute("patient", patient);
+			request.getSession().putValue("patient", patient);**/
 			response.sendRedirect("patient-home.html");
 		}
 	}

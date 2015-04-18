@@ -4,7 +4,7 @@
 
 <servlet>
 		<servlet-name>Login</servlet-name>
-		<servlet-class>main.Login</servlet-class>
+		<servlet-class>main.users.authentication.Login</servlet-class>
 </servlet>
 
 <servlet-mapping>
