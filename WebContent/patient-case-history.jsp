@@ -6,23 +6,25 @@
 -->
 <html>
 	<head>
-		<title>Login !!</title>
+		<title>Case History</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
+		
 		<noscript>
 			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body class="no-sidebar">
+	<body onLoad="loadUser()" class="no-sidebar">
 
 		<!-- Header -->
 			<div id="header-wrapper">
@@ -30,14 +32,28 @@
 
 					<!-- Logo -->
 						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
-						<h1 id="logo"><a href="index.html">Home</a></h1>
+						<h1 id="logo"><a href="patient-home.html">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
+								<li>
+									<a href="">Patient Portal</a>
+									<ul>
+										<li><a href="register-case.html">Register New Case</a></li>
+										<li><a href="patient-case-history.html">Case History</a></li>
+									</ul>
+								</li>
 								<li class="break"><a href="about-us.html">About US</a></li>
 								<li class="break"><a href="contact-us.html">Contact Us</a></li>
-								<li class="break"><a href="user-login.html">Login</a></li>
+								<li>
+									<a href="">User Name</a>
+									<ul>
+										<li><a href="#">My Profile</a></li>
+										<li><a href="#">Change Password</a></li>
+										<li><a href="index.html">logout</a></li>
+									</ul>
+								</li>
 							</ul>
 						</nav>
 
@@ -51,47 +67,53 @@
 					<!-- Content -->
 						<article id="content">
 							<header>
-								<h2 style="text-align:center">Login</h2>
-								<p style="text-align:center">Please login with your registered Email ID with us.</p>
+								<h2>Case History</h2>
+								<p>Below are the case details registered by you in past:</p>
 							</header>
-							<section class="6u 12u(narrower)">
-							<form method="post" action="/newproject_360/login">
 								<div class="row 50%">
-									<div style="margin-left: 50%;margin-bottom: -2em" class="12u">
-										<p style="display: inline-block">Login as : </p>
-										<input style="margin-left: 10%" type="radio" name="user" value="patient">Patient</input>
-										<input style="margin-left: 10%" type="radio" name="user" value="doctor">Doctor</input>
-									</div>
-									<div style="margin-left: 50%" class="12u">
-										<input name="email" placeholder="Registered Email ID" id="email" type="text" />
-									</div>
-									<div style="margin-left: 50%" class="12u">
-										<input name="password" placeholder="Password" id="password" type="password" />
+									<div class="12u">
+										<table>
+  										  <tr>
+										    <th>Case #</th>
+										    <th>Disease</th>		
+										    <th>Severity</th>
+										    <th>Doctor</th>
+										    <th>Date Created</th>
+										    <th>Resolution Date</th>
+										    <th>Status</th>
+										  </tr>
+										  <tr>
+										    <td>12345</td>
+										    <td>Cough</td>		
+										    <td>5</td>
+										    <td>Tarun</td>
+										    <td>4/12/2015</td>
+										    <td>4/17/2015</td>
+										    <td>Closed</td>
+										  </tr>
+										  <tr>
+										  	<td>12876</td>
+										    <td>Chicken Pox</td>		
+										    <td>7</td>
+										    <td>Tarun</td>
+										    <td>1/12/2015</td>
+										    <td></td>
+										    <td>Closed</td>
+										  </tr>
+										</table>
 									</div>
 								</div>
-								<div class="row 50%">
-									<div style="margin-left: 50%" class="12u">
-										<ul class="actions">
-											<li><input type="submit" value="Login" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-										<a href="forgot-password.html">Forgot Password ?</a>
-									</div>
-								</div>
-							</form>
-						</section>
-						<a style="float:right" href="new-user.html">New User ? Sign up</a>
+
 						</article>
 
 					</div>
 				</div>
-			</div>
 
 		<!-- Footer -->
 			<div id="footer-wrapper">
 				<div id="copyright" class="container">
 					<ul class="menu">
-						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: <u>Team Minions</u></a></li>
+						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: Team Minions</li>
 					</ul>
 				</div>
 			</div>

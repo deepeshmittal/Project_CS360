@@ -29,7 +29,7 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
+						<img id="image_logo" src="images/Minion_Logo.jpg">
 						<h1 id="logo"><a href="index.html">Home</a></h1>
 
 					<!-- Nav -->
@@ -49,7 +49,7 @@
 			<div id="footer-wrapper">
 				<div id="footer" class="container">
 					<header class="major">
-						<h2>Conact Numbers</h2><br />
+						<h2>Contact Numbers</h2><br />
 						<p>Mobile : (453) – 689 – 4321<br />
 						Toll free : (877) – 654 - 3219</p>
 						<br/>
@@ -100,10 +100,12 @@
 							</div>
 						</section>
 					</div>
-				</div>			<div id="footer-wrapper">
+				</div>	
+				</div>		
+				<div id="footer-wrapper">
 				<div id="copyright" class="container">
 					<ul class="menu">
-						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: <u>Team Minions</u></a></li>
+						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: Team Minions</li>
 					</ul>
 				</div>
 			</div>

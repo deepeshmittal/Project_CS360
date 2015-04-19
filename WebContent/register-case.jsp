@@ -40,7 +40,7 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
+						<img id="image_logo" src="images/Minion_Logo.jpg">
 						<h1 id="logo"><a href="patient-home.html">Home</a></h1>
 
 					<!-- Nav -->
@@ -50,7 +50,7 @@
 									<a href="">Patient Portal</a>
 									<ul>
 										<li><a href="register-case.html">Register New Case</a></li>
-										<li><a href="#">Case History</a></li>
+										<li><a href="patient-case-history.html">Case History</a></li>
 									</ul>
 								</li>
 								<li class="break"><a href="about-us.html">About US</a></li>
@@ -85,14 +85,23 @@
 									<div class="12u">
 										<input name="fname" id="fname" placeholder="First Name" type="text" value='<%=request.getAttribute("fname")%>'/><br>
 										<input name="lname" placeholder="Last Name" type="text" /><br>
-										<input name="address" placeholder="Address" type="text" /><br>
-										<input name="mobile" placeholder="Mobile" type="text" /><br>
 										<select>
 											<option value='' disabled selected>Please select your disease</option>
 											<option value="chicken pox">Chicken Pox</option>
 											<option value="cold sores">Cold Sores</option>
 											<option value="common cold">Common Cold</option>
 											<option value="cough">Cough</option>
+											<option value= "Arthritis"> Arthritis </option>
+											<option value= "Asthma"> Asthma </option>
+											<option value= "Diabetes"> Diabetes </option>
+											<option value= "Epilepsy"> Epilepsy </option>
+											<option value= "Stroke"> Stroke </option>
+											<option value= "Headache"> Headache </option>
+											<option value= "Nausea"> Nausea </option>
+											<option value= "Fever"> Fever </option>
+											<option value= "Body Pain"> Body Pain </option>
+											<option value= "Backache"> backache </option>
+											<option value= "Stomach Pain"> stomach pain </option>			
 										</select><br />
 										<select>
 											<option value='' disabled selected>Enter severity level [0-10]</option>
@@ -111,7 +120,7 @@
 										<div class="row 50%">
 											<div class="12u">
 												<p>Additional Comments :</p>
-												<textarea name="message" placeholder="Describe your illness (Optional)"; onfocus="this.placeholder = ''" onblur="this.placeholder = 'Describe your illness (Optional)'"></textarea>
+												<textarea name="message" placeholder="Describe your illness (Optional)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Describe your illness (Optional)'"></textarea>
 											</div>
 										</div>
 									</div>
@@ -119,7 +128,7 @@
 								<div class="row 50%">
 									<div style="margin-left: 75%" class="12u">
 										<ul class="actions">
-											<li><input type="submit"/></li>
+											<li><input type="submit" value ="Submit"/></li>
 											<li><input type="reset" value="Reset" /></li>
 										</ul>
 									</div>
@@ -131,13 +140,12 @@
 
 					</div>
 				</div>
-			</div>
 
 		<!-- Footer -->
 			<div id="footer-wrapper">
 				<div id="copyright" class="container">
 					<ul class="menu">
-						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: <u>Team Minions</u></a></li>
+						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: Team Minions</li>
 					</ul>
 				</div>
 			</div>

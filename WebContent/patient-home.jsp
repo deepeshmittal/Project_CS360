@@ -13,7 +13,7 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="./css/skel.css" />
+			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
@@ -25,15 +25,29 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
-						<h1 id="logo"><a href="index.html">Home</a></h1>
+						<img id="image_logo" src="images/Minion_Logo.jpg">
+						<h1 id="logo"><a href="patient-home.html">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
+								<li>
+									<a href="">Patient Portal</a>
+									<ul>
+										<li><a href="register-case.html">Register New Case</a></li>
+										<li><a href="patient-case-history.html">Case History</a></li>
+									</ul>
+								</li>
 								<li class="break"><a href="about-us.html">About US</a></li>
 								<li class="break"><a href="contact-us.html">Contact Us</a></li>
-								<li class="break"><a href="user-login.html">Login</a></li>
+								<li>
+									<a href="">User Name</a>
+									<ul>
+										<li><a href="#">My Profile</a></li>
+										<li><a href="#">Change Password</a></li>
+										<li><a href="index.html">logout</a></li>
+									</ul>
+								</li>
 								</ul>
 						</nav>
 
@@ -42,12 +56,10 @@
 				<!-- Hero -->
 					<section id="hero" class="container">
 						<header>
-							<h2>Welcome to Pateint Care Portal </h2>
-							<h3>International Care Hospital</h3>
-						</header>
-						<p>Serving with <strong><em>pride</em></strong> 
+							<h2>Welcome Username to Pateint Care Portal </h2>
+						</header> 
 						<ul class="actions">
-							<li><a href="user-login.html" class="button">Get Started !!</a></li>
+							<li><a href="register-case.html" class="button">Feeling sick...Tell us !!</a></li>
 						</ul>
 					</section>
 
@@ -57,7 +69,7 @@
 			<div id="footer-wrapper">
 				<div id="copyright" class="container">
 					<ul class="menu">
-						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: <u>Team Minions</u></a></li>
+						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: Team Minions</li>
 					</ul>
 				</div>
 			</div>

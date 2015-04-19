@@ -17,8 +17,8 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/skel.css"/>
+			<link rel="stylesheet" href="css/style.css"/>
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
@@ -29,7 +29,7 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
+						<img id="image_logo" src="images/Minion_Logo.jpg">
 						<h1 id="logo"><a href="index.html">Home</a></h1>
 
 					<!-- Nav -->
@@ -51,16 +51,13 @@
 					<!-- Content -->
 						<article id="content">
 							<header>
-								<h2 style="text-align:center">Forgot Password</h2>
+								<h2 style="text-align:center">Set New Password</h2>
 							</header>
 							<section class="6u 12u(narrower)">
 							<form method="post" action="/newproject_360/login">
 								<div class="row 50%">
 									<div style="margin-left: 50%" class="12u">
-										<input name="email" placeholder="Enter Registered Email ID" id="email" type="text" />
-									</div>
-									<div style="margin-left: 50%" class="12u">
-										<input name="maiden" placeholder="Enter Mother's Maiden Name" id="maiden" type="password" />
+										<input name="newpassword" placeholder="Enter 8 digit password" id="newpassword" type="password" />
 									</div>
 								</div>
 								<div class="row 50%">
@@ -83,7 +80,7 @@
 			<div id="footer-wrapper">
 				<div id="copyright" class="container">
 					<ul class="menu">
-						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: <u>Team Minions</u></a></li>
+						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: Team Minions</li>
 					</ul>
 				</div>
 			</div>

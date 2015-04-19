@@ -30,7 +30,7 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
+						<img id="image_logo" src="images/Minion_Logo.jpg">
 						<h1 id="logo"><a href="patient-home.html">Home</a></h1>
 
 					<!-- Nav -->
@@ -188,13 +188,13 @@
 
 					</div>
 				</div>
-			</div>
+
 
 		<!-- Footer -->
 			<div id="footer-wrapper">
 				<div id="copyright" class="container">
 					<ul class="menu">
-						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: <u>Team Minions</u></a></li>
+						<li>Copyright &copy; 2015 Team Minions. All rights reserved.</li><li>Designed by: Team Minions</li>
 					</ul>
 				</div>
 			</div>
