@@ -1,5 +1,4 @@
 <!DOCTYPE HTML>
-
 <html>
 	<head>
 		<title>Home Page</title>
@@ -26,7 +25,7 @@
 
 					<!-- Logo -->
 						<img id="image_logo" src="images/Minion_Logo.jpg">
-						<h1 id="logo"><a href="patient-home.html">Home</a></h1>
+						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -34,18 +33,18 @@
 								<li>
 									<a href="">Patient Portal</a>
 									<ul>
-										<li><a href="register-case.html">Register New Case</a></li>
-										<li><a href="patient-case-history.html">Case History</a></li>
+										<li><a href="register-case.jsp">Register New Case</a></li>
+										<li><a href="patient-case-history.jsp">Case History</a></li>
 									</ul>
 								</li>
-								<li class="break"><a href="about-us.html">About US</a></li>
-								<li class="break"><a href="contact-us.html">Contact Us</a></li>
+								<li class="break"><a href="about-us.jsp">About US</a></li>
+								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
 								<li>
 									<a href="">User Name</a>
 									<ul>
 										<li><a href="#">My Profile</a></li>
 										<li><a href="#">Change Password</a></li>
-										<li><a href="index.html">logout</a></li>
+										<li><a href="index.jsp">logout</a></li>
 									</ul>
 								</li>
 								</ul>
@@ -59,7 +58,7 @@
 							<h2>Welcome Username to Pateint Care Portal </h2>
 						</header> 
 						<ul class="actions">
-							<li><a href="register-case.html" class="button">Feeling sick...Tell us !!</a></li>
+							<li><a href="register-case.jsp" class="button">Feeling sick...Tell us !!</a></li>
 						</ul>
 					</section>
 

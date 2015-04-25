@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Telephasic by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Reset Password</title>
@@ -30,14 +25,14 @@
 
 					<!-- Logo -->
 						<img id="image_logo" src="images/Minion_Logo.jpg">
-						<h1 id="logo"><a href="index.html">Home</a></h1>
+						<h1 id="logo"><a href="index.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li class="break"><a href="about-us.html">About US</a></li>
-								<li class="break"><a href="contact-us.html">Contact Us</a></li>
-								<li class="break"><a href="user-login.html">Login</a></li>
+								<li class="break"><a href="about-us.jsp">About US</a></li>
+								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
+								<li class="break"><a href="user-login.jsp">Login</a></li>
 							</ul>
 						</nav>
 

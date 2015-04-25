@@ -37,14 +37,16 @@ public class Authenticator {
 		   String uname = lineArr[5];
 		   String passwd = lineArr[6];
 		   if(uname.equalsIgnoreCase(userName) && pass.equals(passwd)) {
-			   user = new Patient();
+			   
+			   user = new RegisteredUser();
 			   user.setAddress(lineArr[3]);
 			   user.setAge(Integer.parseInt(lineArr[7]));
-//			   user.setContactNumber(Integer.parseInt(lineArr[4]));
+			   user.setContactNumber(lineArr[4]);
 			   user.setFirstName(lineArr[0]);
 			   user.setLastName(lineArr[1]);
 			   user.setGender(lineArr[2]);
 			   user.setRegisteredMail(uname);
+			   user.setUser_type(lineArr[8]);
 			   
 			   break;
 		   }
@@ -53,7 +55,7 @@ public class Authenticator {
 	   
 	   bfr.close();
 		
-		return user;
+	return user;
 	}
 	
 }

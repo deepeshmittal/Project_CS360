@@ -1,12 +1,11 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Case History</title>
+		<title>Register Case</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-	
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -26,7 +25,7 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
+						<img id="image_logo" src="images/Minion_Logo.jpg">
 						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
@@ -62,43 +61,10 @@
 					<!-- Content -->
 						<article id="content">
 							<header>
-								<h2>Case History</h2>
-								<p>Below are the case details registered by you in past:</p>
+								<h2>Your case has been registered Successfully...!!</h2>
+								<p>Case # : </p>
+								<p id="casenumber"></p>  
 							</header>
-								<div class="row 50%">
-									<div class="12u">
-										<table>
-  										  <tr>
-										    <th>Case #</th>
-										    <th>Disease</th>		
-										    <th>Severity</th>
-										    <th>Doctor</th>
-										    <th>Date Created</th>
-										    <th>Resolution Date</th>
-										    <th>Status</th>
-										  </tr>
-										  <tr>
-										    <td>12345</td>
-										    <td>Cough</td>		
-										    <td>5</td>
-										    <td>Tarun</td>
-										    <td>4/12/2015</td>
-										    <td>4/17/2015</td>
-										    <td>Closed</td>
-										  </tr>
-										  <tr>
-										  	<td>12876</td>
-										    <td>Chicken Pox</td>		
-										    <td>7</td>
-										    <td>Tarun</td>
-										    <td>1/12/2015</td>
-										    <td></td>
-										    <td>Closed</td>
-										  </tr>
-										</table>
-									</div>
-								</div>
-
 						</article>
 
 					</div>

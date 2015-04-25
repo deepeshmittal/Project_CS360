@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Telephasic by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>Register Case</title>
@@ -11,16 +6,6 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-		<script type="text/javascript">
-	
-	function loadUser() {
-		var user = `<%= Session["patient"] %>`;
-		var firstNameField = getElementById("fName");
-		firstNameField.setValue("user.firstName");
-		
-	}
-	
-	</script>
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
 		<script src="js/skel.min.js"></script>
@@ -41,7 +26,7 @@
 
 					<!-- Logo -->
 						<img id="image_logo" src="images/Minion_Logo.jpg">
-						<h1 id="logo"><a href="patient-home.html">Home</a></h1>
+						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -49,18 +34,18 @@
 								<li>
 									<a href="">Patient Portal</a>
 									<ul>
-										<li><a href="register-case.html">Register New Case</a></li>
-										<li><a href="patient-case-history.html">Case History</a></li>
+										<li><a href="register-case.jsp">Register New Case</a></li>
+										<li><a href="patient-case-history.jsp">Case History</a></li>
 									</ul>
 								</li>
-								<li class="break"><a href="about-us.html">About US</a></li>
-								<li class="break"><a href="contact-us.html">Contact Us</a></li>
+								<li class="break"><a href="about-us.jsp">About US</a></li>
+								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
 								<li>
 									<a href="">User Name</a>
 									<ul>
 										<li><a href="#">My Profile</a></li>
 										<li><a href="#">Change Password</a></li>
-										<li><a href="index.html">logout</a></li>
+										<li><a href="index.jsp">logout</a></li>
 									</ul>
 								</li>
 							</ul>
@@ -80,30 +65,20 @@
 								<p>Please provide details about your medical condition :</p>
 							</header>
 							<section class="6u 12u(narrower)">
-							<form method="post" action="#">
+							<form method="post" action="/newproject_360/register">
 								<div class="row 50%">
 									<div class="12u">
-										<input name="fname" id="fname" placeholder="First Name" type="text" value='<%=request.getAttribute("fname")%>'/><br>
+										<input name="fname" id="fname" placeholder="First Name" type="text"/><br>
 										<input name="lname" placeholder="Last Name" type="text" /><br>
-										<select>
+										<select name="disease" id="disease">
 											<option value='' disabled selected>Please select your disease</option>
-											<option value="chicken pox">Chicken Pox</option>
-											<option value="cold sores">Cold Sores</option>
-											<option value="common cold">Common Cold</option>
-											<option value="cough">Cough</option>
-											<option value= "Arthritis"> Arthritis </option>
-											<option value= "Asthma"> Asthma </option>
-											<option value= "Diabetes"> Diabetes </option>
-											<option value= "Epilepsy"> Epilepsy </option>
-											<option value= "Stroke"> Stroke </option>
-											<option value= "Headache"> Headache </option>
-											<option value= "Nausea"> Nausea </option>
-											<option value= "Fever"> Fever </option>
-											<option value= "Body Pain"> Body Pain </option>
-											<option value= "Backache"> backache </option>
-											<option value= "Stomach Pain"> stomach pain </option>			
+											<option value="pain">Pain</option>
+											<option value="drowsiness">Drowsiness</option>
+											<option value="nausea">Nausea</option>
+											<option value="anxiety">Anxiety</option>
+											<option value= "depression">Depression</option>			
 										</select><br />
-										<select>
+										<select name="severity" id="severity">
 											<option value='' disabled selected>Enter severity level [0-10]</option>
 											<option value="1">1</option>
 											<option value="2">2</option>

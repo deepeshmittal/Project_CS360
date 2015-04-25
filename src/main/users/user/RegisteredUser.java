@@ -7,10 +7,11 @@ public class RegisteredUser {
 	private String lastName;
 	private String gender;
 	private String address;
-	private int contactNumber;
+	private String contactNumber;
 	private String registeredMail;
 	private String password;
-	private int age;	
+	private int age;
+	private String user_type;
 
 	public String getFirstName() {
 		return firstName;
@@ -44,11 +45,11 @@ public class RegisteredUser {
 		this.address = address;
 	}
 
-	public int getContactNumber() {
+	public String getContactNumber() {
 		return contactNumber;
 	}
 
-	public void setContactNumber(int contactNumber) {
+	public void setContactNumber(String contactNumber) {
 		this.contactNumber = contactNumber;
 	}
 
@@ -76,8 +77,11 @@ public class RegisteredUser {
 		this.age = age;
 	}
 	
-	
-	
-	
-	
+	public String getUser_type() {
+		return user_type;
+	}
+
+	public void setUser_type(String user_type) {
+		this.user_type = user_type;
+	}
 }

@@ -12,7 +12,7 @@
 		<script src="js/skel-layers.min.js"></script>
 		<script src="js/init.js"></script>
 		<noscript>
-			<link rel="stylesheet" href="./css/skel.css" />
+			<link rel="stylesheet" href="css/skel.css" />
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
@@ -25,15 +25,21 @@
 
 					<!-- Logo -->
 						<img id="image_logo" src="images/Minion_Logo.jpg">
-						<h1 id="logo"><a href="index.jsp">Home</a></h1>
+						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
+								<li>
+									<a href="">Doctor Portal</a>
+									<ul>
+										<li><a href="doctor-case-history.jsp">Patient Cases</a></li>
+									</ul>
+								</li>
 								<li class="break"><a href="about-us.jsp">About US</a></li>
 								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
-								<li class="break"><a href="user-login.jsp">Login</a></li>
-								</ul>
+								<li class="break"><a href="index.jsp">logout</a></li>						</li>
+							</ul>
 						</nav>
 
 				</div>
@@ -41,13 +47,8 @@
 				<!-- Hero -->
 					<section id="hero" class="container">
 						<header>
-							<h2>Welcome to Pateint Care Portal </h2>
-							<h3>International Care Hospital</h3>
-						</header>
-						<p>Serving with <strong><em>pride</em></strong> 
-						<ul class="actions">
-							<li><a href="user-login.jsp" class="button">Get Started !!</a></li>
-						</ul>
+							<h2>Welcome Dr. Username to Pateint Care Portal </h2>
+						</header> 
 					</section>
 
 			</div>

@@ -5,25 +5,32 @@ import java.util.Date;
 public class MedicalCase {
 
 	private int caseNumber;
-	private Patient patientEmail;
+	private String patientEmail;
 	private Doctor doctorEmail;
 	private String disease;
 	private int severityLevel;
-	private Date dateCreated;
+	private String dateCreated;
 	private Date dateResolution;
 	private String caseStatus;
 	private int actualSeverity;
+	private String comment;
 	
+	public String getComment() {
+		return comment;
+	}
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
 	public int getCaseNumber() {
 		return caseNumber;
 	}
 	public void setCaseNumber(int caseNumber) {
 		this.caseNumber = caseNumber;
 	}
-	public Patient getPatientEmail() {
+	public String getPatientEmail() {
 		return patientEmail;
 	}
-	public void setPatientEmail(Patient patientEmail) {
+	public void setPatientEmail(String patientEmail) {
 		this.patientEmail = patientEmail;
 	}
 	public Doctor getDoctorEmail() {
@@ -44,11 +51,11 @@ public class MedicalCase {
 	public void setSeverityLevel(int severityLevel) {
 		this.severityLevel = severityLevel;
 	}
-	public Date getDateCreated() {
+	public String getDateCreated() {
 		return dateCreated;
 	}
-	public void setDateCreated(Date dateCreated) {
-		this.dateCreated = dateCreated;
+	public void setDateCreated(String string) {
+		this.dateCreated = string;
 	}
 	public Date getDateResolution() {
 		return dateResolution;

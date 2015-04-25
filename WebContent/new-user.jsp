@@ -1,9 +1,4 @@
 <!DOCTYPE HTML>
-<!--
-	Telephasic by HTML5 UP
-	html5up.net | @n33co
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 		<title>New User Registration</title>
@@ -31,14 +26,14 @@
 
 					<!-- Logo -->
 						<img id="image_logo" src="images/Minion_Logo.jpg">
-						<h1 id="logo"><a href="patient-home.html">Home</a></h1>
+						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li class="break"><a href="about-us.html">About US</a></li>
-								<li class="break"><a href="contact-us.html">Contact Us</a></li>
-								<li class="break"><a href="user-login.html">Login</a></li>		
+								<li class="break"><a href="about-us.jsp">About US</a></li>
+								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
+								<li class="break"><a href="user-login.jsp">Login</a></li>		
 							</ul>
 						</nav>
 
@@ -56,14 +51,14 @@
 								<p>Please fill up the form with your basic information</p>
 							</header>
 							<section class="6u 12u(narrower)">
-							<form method="post" action="#">
+							<form method="post" action="/newproject_360/newuser">
 								<div class="row 50%">
 									<div class="12u">
 										<input name="email" id="email" placeholder="Enter Email Address" type="text" /><br>
 										<input name="password" placeholder="Enter 8 digit password" id="password" type="password" /><br>
 										<input name="fname" id="fname" placeholder="First Name" type="text" /><br>
-										<input name="lname" placeholder="Last Name" type="text" /><br>
-										<select>
+										<input name="lname" id="lname" placeholder="Last Name" type="text" /><br>
+										<select name="age" id="age">
 											<option value='' disabled selected>Enter Age</option>
 											<option  value="1">1</option>
 											<option  value="2">2</option>
@@ -169,8 +164,16 @@
 										<p style="display: inline-block">Gender : </p>
 										<input style="margin-left: 10%" type="radio" name="user" value="Male">Male</input>
 										<input style="margin-left: 10%" type="radio" name="user" value="Female">Female</input>
-										<input name="address" placeholder="Address" type="text" /><br>
-										<input name="mobile" placeholder="Mobile" type="text" /><br>
+										<input name="address" id="address" placeholder="Address" type="text" /><br>
+										<input name="mobile" id="mobile" placeholder="Mobile" type="text" /><br>
+										<select name="doctor" id="doctor">
+											<option value='' disabled selected>Select your doctor</option>
+											<option  value="Harry Largo">Harry Largo</option>
+											<option  value="Vaughn France">Vaughn France</option>
+											<option  value="Earnest Craw">Earnest Craw</option>
+											<option  value="Jina Tague">Jina Tague</option>
+											<option  value="Romana Kirts">Romana Kirts</option>
+											</select><br />
 									</div>
 								</div>
 								<div class="row 50%">

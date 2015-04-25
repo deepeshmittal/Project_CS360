@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import main.users.user.Doctor;
 import main.users.user.Patient;
 import main.users.user.RegisteredUser;
 
@@ -43,13 +44,19 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("password");
 		
 		String path = request.getServletContext().getRealPath("/WEB-INF/classes/resources/registered_users");
-		RegisteredUser user =Authenticator.getInstance(path).authenticate(username, password); 
-		if( user!= null) {
-			Patient patient = (Patient) user;
-			/**request.getSession().setAttribute("patient", patient);
-			request.getSession().putValue("patient", patient);**/
-			response.sendRedirect("patient-home.html");
+		RegisteredUser user = Authenticator.getInstance(path).authenticate(username, password); 
+		
+		if( user.getUser_type().equalsIgnoreCase("P")) {
+			
+			/*Patient patient = (Patient) user;
+			request.getSession().setAttribute("patient", patient);
+			request.getSession().putValue("patient", patient);*/
+			response.sendRedirect("patient-home.jsp");
+		}
+		else {
+			/*Doctor doctor = (Doctor) user;
+			request.getSession().setAttribute("doctor", doctor);*/
+			response.sendRedirect("doctor-home.jsp");
+		}
 		}
 	}
-
-}
