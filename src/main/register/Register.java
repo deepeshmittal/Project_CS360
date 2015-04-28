@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,12 +21,12 @@ public class Register extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	@Override
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		doPost(request,response);
 	}
 	
 	@Override
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		String disease = (String) request.getParameter("disease");
 		String severity = (String) request.getParameter("severity");
 		String message = (String) request.getParameter("message");
@@ -56,7 +58,9 @@ public class Register extends HttpServlet{
 		
 		if(caseDao.registerCase(mCase))
 		{
-			response.sendRedirect("register-case-success.jsp");
+			request.setAttribute("caseNumber", mCase.getCaseNumber());
+			RequestDispatcher reqDispatcher = request.getRequestDispatcher("register-case-success.jsp");
+			 reqDispatcher.forward(request,response);
 		}
 		
 	}

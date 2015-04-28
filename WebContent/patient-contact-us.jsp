@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
 		<title>Contact US</title>
@@ -37,7 +39,7 @@
 								</li>
 										<li class="break"><a href="patient-about-us.jsp">About US</a></li>
 										<li class="break"><a href="patient-contact-us.jsp">Contact Us</a></li>
-										<li class="break"><a href="index.jsp">logout</a></li>	
+										<li class="break"><a href="<c:url value="/logout"/>">logout</a></li>	
 							</ul>
 						</nav>
 

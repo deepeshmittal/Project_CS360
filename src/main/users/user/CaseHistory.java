@@ -36,9 +36,16 @@ public class CaseHistory extends HttpServlet{
 		caseList = caseDao.fetchCasesFromDB(caseList, user);
 		
 		req.setAttribute("caseList", caseList);
+		
+		if (user.getUser_type().equalsIgnoreCase("P")){
 		RequestDispatcher dispatcher = 
 				getServletContext().getRequestDispatcher("/patient-case-history.jsp");
-		dispatcher.forward(req, res);
+		dispatcher.forward(req, res);}
+		else if (user.getUser_type().equalsIgnoreCase("D"))
+		{
+			RequestDispatcher dispatcher = 
+					getServletContext().getRequestDispatcher("/doctor-case-history.jsp");
+			dispatcher.forward(req, res);}
 	}
 
 }

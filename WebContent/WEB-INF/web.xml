@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
   <display-name>newproject_360</display-name>
-  
   <servlet>
     <servlet-name>Login</servlet-name>
     <servlet-class>main.users.authentication.Login</servlet-class>
@@ -10,7 +9,6 @@
     <servlet-name>Login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>Register</servlet-name>
     <servlet-class>main.register.Register</servlet-class>
@@ -19,7 +17,6 @@
     <servlet-name>Register</servlet-name>
     <url-pattern>/register</url-pattern>
   </servlet-mapping>
-
   <servlet>
     <servlet-name>Newuser</servlet-name>
     <servlet-class>main.newuser.Newuser</servlet-class>
@@ -28,7 +25,6 @@
     <servlet-name>Newuser</servlet-name>
     <url-pattern>/newuser</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>CaseHistory</servlet-name>
     <servlet-class>main.users.user.CaseHistory</servlet-class>
@@ -37,5 +33,22 @@
     <servlet-name>CaseHistory</servlet-name>
     <url-pattern>/caseHistory</url-pattern>
   </servlet-mapping>
-
+  <servlet>
+    <servlet-name>Logout</servlet-name>
+    <servlet-class>main.users.logout.Logout</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Logout</servlet-name>
+    <url-pattern>/logout</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SendPrescription</servlet-name>
+    <servlet-class>main.register.SendPrescription</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SendPrescription</servlet-name>
+    <url-pattern>/sendprescription</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

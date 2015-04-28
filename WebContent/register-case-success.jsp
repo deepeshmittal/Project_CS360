@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
 		<title>Register Case</title>
@@ -18,8 +20,8 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body onLoad="loadUser()" class="no-sidebar">
-
+	<body class="no-sidebar">
+  
 		<!-- Header -->
 			<div id="header-wrapper">
 				<div id="header" class="container">
@@ -38,7 +40,7 @@
 								</li>
 										<li class="break"><a href="patient-about-us.jsp">About US</a></li>
 										<li class="break"><a href="patient-contact-us.jsp">Contact Us</a></li>
-										<li class="break"><a href="index.jsp">logout</a></li>	
+										<li class="break"><a href="<c:url value="/logout"/>">logout</a></li>	
 							</ul>
 						</nav>
 
@@ -53,8 +55,7 @@
 						<article id="content">
 							<header>
 								<h2>Your case has been registered Successfully...!!</h2>
-								<p>Case # : </p>
-								<p id="casenumber"></p>  
+								<p>Case # : ${caseNumber}</p>
 							</header>
 						</article>
 

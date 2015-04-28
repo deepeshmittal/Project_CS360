@@ -8,6 +8,18 @@
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		
+		<!-- <script type="text/javascript">
+			function sendprescription() {
+				var req = new XMLHttpRequest();
+				
+				var prescription = document.getElementById('docpres').value;
+				
+				var url = "/newproject_360/sendprescription";
+				req.open("POST",url,false);
+				req.send("pres="+prescription);
+			}
+		</script>  -->
 	
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
@@ -36,12 +48,12 @@
 								<li>
 									<a href="">Doctor Portal</a>
 									<ul>
-										<li><a href="doctor-case-history.jsp">Patient Cases</a></li>
+										<li><a href='<c:url value="/caseHistory"/>'>Patient Cases</a></li>
 									</ul>
 								</li>
 								<li class="break"><a href="doctor-about-us.jsp">About US</a></li>
 								<li class="break"><a href="doctor-contact-us.jsp">Contact Us</a></li>
-								<li class="break"><a href="index.jsp">logout</a></li>						</li>
+								<li class="break"><a href="<c:url value="/logout"/>">logout</a></li>
 							</ul>
 						</nav>
 
@@ -72,7 +84,6 @@
 										    <th>Your prescription</th>
 										    <th>Calculated Severity</th>
 										    <th>Status</th>
-										    <th>Edit</th>
 										  </tr>
 										  <c:forEach var="rec" items="${caseList}">
 										  <tr>
@@ -83,10 +94,14 @@
 										    <td>${rec.dateCreated}</td>
 										    <td>${rec.dateResolution}</td>
 										    <td>${rec.comment}</td>
-										    <td>${rec.docPrescription}</td>
+										    <td>
+										    <table>
+										    <tr><textarea name="docpres" id="docpres" placeholder="NA" onfocus="this.placeholder = ''" onblur="this.placeholder = 'NA'"></textarea></tr>
+										    <tr><button type="submit" class="editbtn" >Send</button></tr>
+										    </table>
+										    </td>
 										    <td>${rec.actualSeverity}</td>										    
 										    <td>${rec.caseStatus}</td>
-										    <td><button class="editbtn">edit</button></td>
 										  </tr>
 										  </c:forEach>
 										</table>

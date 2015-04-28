@@ -18,7 +18,7 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body onLoad="loadUser()" class="no-sidebar">
+	<body class="no-sidebar">
 
 		<!-- Header -->
 			<div id="header-wrapper">
@@ -53,11 +53,11 @@
 							<form method="post" action="/newproject_360/newuser">
 								<div class="row 50%">
 									<div class="12u">
-										<input name="email" id="email" placeholder="Enter Email Address" type="text" /><br>
-										<input name="password" placeholder="Enter 8 digit password" id="password" type="password" /><br>
-										<input name="fname" id="fname" placeholder="First Name" type="text" /><br>
-										<input name="lname" id="lname" placeholder="Last Name" type="text" /><br>
-										<select name="age" id="age">
+										<input name="email" id="email" placeholder="Enter Email Address" type="text" required/><br>
+										<input name="password" placeholder="Enter 8 digit password" id="password" type="password" required/><br>
+										<input name="fname" id="fname" placeholder="First Name" type="text" required/><br>
+										<input name="lname" id="lname" placeholder="Last Name" type="text" required/><br>
+										<select name="age" id="age" required>
 											<option value='' disabled selected>Enter Age</option>
 											<option  value="1">1</option>
 											<option  value="2">2</option>
@@ -160,12 +160,12 @@
 											<option  value="99">99</option>
 											<option  value="100">100</option>
 										</select><br />
-										<p style="display: inline-block">Gender : </p>
-										<input style="margin-left: 10%" type="radio" name="user" value="Male">Male</input>
-										<input style="margin-left: 10%" type="radio" name="user" value="Female">Female</input>
-										<input name="address" id="address" placeholder="Address" type="text" /><br>
-										<input name="mobile" id="mobile" placeholder="Mobile" type="text" /><br>
-										<select name="doctor" id="doctor">
+										<p style="display: inline-block" required>Gender : </p>
+										<input style="margin-left: 10%" type="radio" name="user" value="Male" required>Male</input>
+										<input style="margin-left: 10%" type="radio" name="user" value="Female" required>Female</input>
+										<input name="address" id="address" placeholder="Address" type="text" required/><br>
+										<input name="mobile" id="mobile" placeholder="Mobile" type="text" required/><br>
+										<select name="doctor" id="doctor" required>
 											<option value='' disabled selected>Select your doctor</option>
 											<option  value="Harry Largo">Harry Largo</option>
 											<option  value="Vaughn France">Vaughn France</option>

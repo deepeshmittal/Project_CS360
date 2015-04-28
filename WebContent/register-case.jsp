@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
 		<title>Register Case</title>
@@ -18,7 +20,7 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body onLoad="loadUser()" class="no-sidebar">
+	<body class="no-sidebar">
 
 		<!-- Header -->
 			<div id="header-wrapper">
@@ -38,7 +40,7 @@
 								</li>
 										<li class="break"><a href="patient-about-us.jsp">About US</a></li>
 										<li class="break"><a href="patient-contact-us.jsp">Contact Us</a></li>
-										<li class="break"><a href="index.jsp">logout</a></li>	
+										<li class="break"><a href="<c:url value="/logout"/>">logout</a></li>	
 							</ul>
 						</nav>
 
@@ -59,9 +61,9 @@
 							<form method="post" action="/newproject_360/register">
 								<div class="row 50%">
 									<div class="12u">
-										<input name="fname" id="fname" placeholder="First Name" type="text"/><br>
-										<input name="lname" placeholder="Last Name" type="text" /><br>
-										<select name="disease" id="disease">
+										<input name="fname" id="fname" placeholder="First Name" type="text" value="${user.firstName}" readonly/><br>
+										<input name="lname" placeholder="Last Name" type="text" value="${user.lastName}" readonly/><br>
+										<select name="disease" id="disease" required>
 											<option value='' disabled selected>Please select your disease</option>
 											<option value="pain">Pain</option>
 											<option value="drowsiness">Drowsiness</option>
@@ -69,7 +71,7 @@
 											<option value="anxiety">Anxiety</option>
 											<option value= "depression">Depression</option>			
 										</select><br />
-										<select name="severity" id="severity">
+										<select name="severity" id="severity" required>
 											<option value='' disabled selected>Enter severity level [0-10]</option>
 											<option value="1">1</option>
 											<option value="2">2</option>

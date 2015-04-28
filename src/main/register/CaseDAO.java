@@ -7,6 +7,7 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import main.users.user.MedicalCase;
@@ -46,7 +47,7 @@ public class CaseDAO {
 	 
 	 public int calculateActualSeverity(String patientEmail, String disease) throws IOException{
 		 int calseverity = 0;
-		 double prevseverity[] = {0};
+		 List<Double> prevseverity = new ArrayList<Double>();
 		 int i=0;
 		 double mean = 0;
 		 double variance = 0;
@@ -54,6 +55,7 @@ public class CaseDAO {
 		 File file = new File(path);
 		 BufferedReader bfr = new BufferedReader(new FileReader(file));
 		 String line;
+		 bfr.readLine();
 			    
 		 while((line=bfr.readLine())!=null && !"".equals(line)) {
 		   String[] lineArr = line.split("\\|");
@@ -62,23 +64,24 @@ public class CaseDAO {
 		   	
 		   	if(patient_email.equalsIgnoreCase(patientEmail) && calDisease.equalsIgnoreCase(disease)) {
 		   		
-		   		prevseverity[i] = Integer.parseInt(lineArr[4]);
-		   		i = i+1;		 
+		   		prevseverity.add(Double.valueOf(lineArr[4]));
 		   	}
 		 }
 		 
-		 for(i = 0; i < prevseverity.length; i++){
-		    mean += prevseverity[i];
+		 for(i = 0; i < prevseverity.size(); i++){
+		    mean += prevseverity.get(i);
 		 }
 		 
-		 mean /= prevseverity.length ;
+		 mean /= prevseverity.size() ;
 		 
-		 for(i = 0; i < prevseverity.length; i++){
-			 prevseverity[i] = Math.pow((prevseverity[i]-mean),2);
+		 List<Double> temp = new ArrayList<Double>();
+		 
+		 for(i = 0; i < prevseverity.size(); i++){
+			  temp.add(i, Math.pow((prevseverity.get(i)-mean),2));
 			}
 		 
-		 for(i = 0; i < prevseverity.length; i++){
-			 	variance += prevseverity[i];
+		 for(i = 0; i < temp.size(); i++){
+			 	variance += temp.get(i);
 			 }
 		 
 		 calseverity = (int)Math.sqrt(variance);
@@ -95,7 +98,7 @@ public class CaseDAO {
 		 String line;
 		 
 		 if (user.getUser_type().equalsIgnoreCase("P"))	 {
-			    
+			   bfr.readLine();
 			   while((line=bfr.readLine())!=null && !"".equals(line)) {
 				   String[] lineArr = line.split("\\|");
 				   String patient_email = lineArr[1];
@@ -120,7 +123,7 @@ public class CaseDAO {
 		   	  }
 		 }
 		 else if (user.getUser_type().equalsIgnoreCase("D")){
-			 
+			 bfr.readLine();
 			 while((line=bfr.readLine())!=null && !"".equals(line)) {
 				   String[] lineArr = line.split("\\|");
 				   String doctor_email = lineArr[2];
