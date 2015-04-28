@@ -1,7 +1,11 @@
 package main.newuser;
 
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 
@@ -27,6 +31,27 @@ public class NewuserDAO {
 		 return newuserDAO;
 	 }
 	
+	 public String fetchDocEmail(String docfname, String doclname) throws IOException{
+		 String docEmail = null;
+		 
+		 File file = new File(path1);
+		 BufferedReader bfr = new BufferedReader(new FileReader(file));
+		 String line;
+		 
+		 while((line=bfr.readLine())!=null && !"".equals(line)) {
+		   String[] lineArr = line.split("\\|");
+		   String dbFname = lineArr[0];
+		   String dbLname = lineArr[1];
+		   
+		   if( (dbFname.equalsIgnoreCase(docfname)) && (dbLname.equalsIgnoreCase(doclname)) ){
+			   docEmail = lineArr[5];
+			   break;
+		   }
+		 }
+		 bfr.close();
+		 return docEmail;
+	 }
+	 
 	 public boolean enterData(Patient newuser) throws IOException
 	 {
 		 FileOutputStream f1 = new FileOutputStream(path1,true);

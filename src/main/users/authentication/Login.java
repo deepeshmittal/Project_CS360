@@ -49,15 +49,19 @@ public class Login extends HttpServlet {
 		RegisteredUser user = Authenticator.getInstance(path).authenticate(username, password);
 		request.getSession().setAttribute("user", user);
 
-		RequestDispatcher dispatcher;
+		RequestDispatcher dispatcher = null;
 		
 		//request.setAttribute("userName", user.getFirstName());
 		
-		if (user.getUser_type().equalsIgnoreCase("P")) {
+		if (user == null){
+			dispatcher = getServletContext().getRequestDispatcher(
+					"/user-login-error.jsp");
+		}
+		else if (user.getUser_type().equalsIgnoreCase("P")) {
 
 			dispatcher = getServletContext().getRequestDispatcher(
 					"/patient-home.jsp");
-		} else {
+		} else if(user.getUser_type().equalsIgnoreCase("D")){
 			dispatcher = getServletContext().getRequestDispatcher(
 					"/doctor-home.jsp");
 		}

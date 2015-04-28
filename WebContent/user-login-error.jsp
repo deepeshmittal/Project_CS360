@@ -47,6 +47,7 @@
 							<header>
 								<h2 style="text-align:center">Login</h2>
 								<p style="text-align:center">Please login with your registered Email ID with us.</p>
+								<p style="text-align:center; color:red; font-size:20px">Email ID and Password doesn't match. Try again !!</p>
 							</header>
 							<section class="6u 12u(narrower)">
 							<form method="post" action="/newproject_360/login">

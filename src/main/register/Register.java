@@ -51,9 +51,9 @@ public class Register extends HttpServlet{
 		mCase.setCaseStatus("Open");
 		mCase.setPatientEmail(patientEmail);
 		mCase.setDoctorEmail(doctorEmail);
-		mCase.setDateResolution(null);
+		mCase.setDateResolution("NA");
 		mCase.setActualSeverity(actualSeverity);
-		mCase.setDocPrescription(null);
+		mCase.setDocPrescription("NA");
 		
 		
 		if(caseDao.registerCase(mCase))

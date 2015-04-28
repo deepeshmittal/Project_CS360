@@ -47,8 +47,18 @@ public class Newuser extends HttpServlet {
 		int age = Integer.parseInt(request.getParameter("age"));
 		String doctor = request.getParameter("doctor");
 		
+		String path_reguser = request.getServletContext().getRealPath("/WEB-INF/classes/resources/registered_users");
+		String path_patient = request.getServletContext().getRealPath("/WEB-INF/classes/resources/Patient");
+		NewuserDAO newpatientDAO = NewuserDAO.getInstance(path_reguser,path_patient);
+		
 		Patient newpatient = new Patient();
 		
+		String[] temp = doctor.split(" ", 2);
+		
+		String docfname = temp[0];
+		String doclname = temp[1];
+		
+		doctor = newpatientDAO.fetchDocEmail(docfname, doclname);
 		
 		newpatient.setFirstName(fname);
 		newpatient.setLastName(lname);
@@ -59,12 +69,6 @@ public class Newuser extends HttpServlet {
 		newpatient.setPassword(password);
 		newpatient.setAge(age);
 		newpatient.setAssigned_doctor(doctor);
-		
-		
-		String path_reguser = request.getServletContext().getRealPath("/WEB-INF/classes/resources/registered_users");
-		String path_patient = request.getServletContext().getRealPath("/WEB-INF/classes/resources/Patient");
-		
-		NewuserDAO newpatientDAO = NewuserDAO.getInstance(path_reguser,path_patient);
 		
 		if(newpatientDAO.enterData(newpatient))
 		{
