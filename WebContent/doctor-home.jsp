@@ -24,8 +24,7 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg">
-						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
+						<h1 id="logo"><a href="doctor-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -36,8 +35,8 @@
 										<li><a href="doctor-case-history.jsp">Patient Cases</a></li>
 									</ul>
 								</li>
-								<li class="break"><a href="about-us.jsp">About US</a></li>
-								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
+								<li class="break"><a href="doctor-about-us.jsp">About US</a></li>
+								<li class="break"><a href="doctor-contact-us.jsp">Contact Us</a></li>
 								<li class="break"><a href="index.jsp">logout</a></li>						</li>
 							</ul>
 						</nav>
@@ -47,7 +46,7 @@
 				<!-- Hero -->
 					<section id="hero" class="container">
 						<header>
-							<h2>Welcome Dr. Username to Pateint Care Portal </h2>
+							<h2>Welcome Dr. ${user.firstName} to Patient Care Portal </h2>
 						</header> 
 					</section>
 

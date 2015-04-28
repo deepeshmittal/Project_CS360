@@ -1,4 +1,6 @@
 <!DOCTYPE HTML>
+<%@ taglib prefix="c" 
+           uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 	<head>
 		<title>Case History</title>
@@ -19,14 +21,13 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body onLoad="loadUser()" class="no-sidebar">
+	<body class="no-sidebar">
 
 		<!-- Header -->
 			<div id="header-wrapper">
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></h1>
 						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
@@ -36,19 +37,12 @@
 									<a href="">Patient Portal</a>
 									<ul>
 										<li><a href="register-case.jsp">Register New Case</a></li>
-										<li><a href="patient-case-history.jsp">Case History</a></li>
+										<li><a href='<c:url value="/caseHistory"/>'>Case History</a></li>
 									</ul>
 								</li>
-								<li class="break"><a href="about-us.jsp">About US</a></li>
-								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
-								<li>
-									<a href="">User Name</a>
-									<ul>
-										<li><a href="#">My Profile</a></li>
-										<li><a href="#">Change Password</a></li>
-										<li><a href="index.jsp">logout</a></li>
-									</ul>
-								</li>
+										<li class="break"><a href="patient-about-us.jsp">About US</a></li>
+										<li class="break"><a href="patient-contact-us.jsp">Contact Us</a></li>
+										<li class="break"><a href="index.jsp">logout</a></li>	
 							</ul>
 						</nav>
 
@@ -75,26 +69,23 @@
 										    <th>Doctor</th>
 										    <th>Date Created</th>
 										    <th>Resolution Date</th>
+										    <th>Your Comment</th>
+										    <th>Doctor Prescription</th>
 										    <th>Status</th>
 										  </tr>
+										  <c:forEach var="rec" items="${caseList}">
 										  <tr>
-										    <td>12345</td>
-										    <td>Cough</td>		
-										    <td>5</td>
-										    <td>Tarun</td>
-										    <td>4/12/2015</td>
-										    <td>4/17/2015</td>
-										    <td>Closed</td>
+										    <td>${rec.caseNumber}</td>
+										    <td>${rec.disease}</td>		
+										    <td>${rec.severityLevel}</td>
+										    <td>${rec.doctorEmail}</td>
+										    <td>${rec.dateCreated}</td>
+										    <td>${rec.dateResolution}</td>
+										    <td>${rec.comment}</td>
+										    <td>${rec.docPrescription}</td>
+										    <td>${rec.caseStatus}</td>
 										  </tr>
-										  <tr>
-										  	<td>12876</td>
-										    <td>Chicken Pox</td>		
-										    <td>7</td>
-										    <td>Tarun</td>
-										    <td>1/12/2015</td>
-										    <td></td>
-										    <td>Closed</td>
-										  </tr>
+										  </c:forEach>
 										</table>
 									</div>
 								</div>

@@ -25,7 +25,6 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg">
 						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
@@ -35,19 +34,11 @@
 									<a href="">Patient Portal</a>
 									<ul>
 										<li><a href="register-case.jsp">Register New Case</a></li>
-										<li><a href="patient-case-history.jsp">Case History</a></li>
-									</ul>
+										<li><a href='<c:url value="/caseHistory"/>'>Case History</a></li>									</ul>
 								</li>
-								<li class="break"><a href="about-us.jsp">About US</a></li>
-								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
-								<li>
-									<a href="">User Name</a>
-									<ul>
-										<li><a href="#">My Profile</a></li>
-										<li><a href="#">Change Password</a></li>
-										<li><a href="index.jsp">logout</a></li>
-									</ul>
-								</li>
+										<li class="break"><a href="patient-about-us.jsp">About US</a></li>
+										<li class="break"><a href="patient-contact-us.jsp">Contact Us</a></li>
+										<li class="break"><a href="index.jsp">logout</a></li>	
 							</ul>
 						</nav>
 

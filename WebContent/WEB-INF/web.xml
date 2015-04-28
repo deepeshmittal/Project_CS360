@@ -28,5 +28,14 @@
     <servlet-name>Newuser</servlet-name>
     <url-pattern>/newuser</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>CaseHistory</servlet-name>
+    <servlet-class>main.users.user.CaseHistory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CaseHistory</servlet-name>
+    <url-pattern>/caseHistory</url-pattern>
+  </servlet-mapping>
 
 </web-app>

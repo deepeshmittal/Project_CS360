@@ -24,14 +24,20 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<h1 id="logo"><a href="index.jsp">Home</a></h1>
+						<h1 id="logo"><a href="doctor-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li class="break"><a href="about-us.jsp">About US</a></li>
-								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
-								<li class="break"><a href="user-login.jsp">Login</a></li>
+								<li>
+									<a href="">Doctor Portal</a>
+									<ul>
+										<li><a href="doctor-case-history.jsp">Patient Cases</a></li>
+									</ul>
+								</li>
+								<li class="break"><a href="doctor-about-us.jsp">About US</a></li>
+								<li class="break"><a href="doctor-contact-us.jsp">Contact Us</a></li>
+								<li class="break"><a href="index.jsp">logout</a></li>						</li>
 							</ul>
 						</nav>
 

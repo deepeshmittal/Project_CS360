@@ -24,15 +24,21 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<h1 id="logo"><a href="index.jsp">Home</a></h1>
+						<h1 id="logo"><a href="patient-home.jsp">Home</a></h1>
 
 					<!-- Nav -->
 						<nav id="nav">
-							<ul>
-								<li class="break"><a href="about-us.jsp">About US</a></li>
-								<li class="break"><a href="contact-us.jsp">Contact Us</a></li>
-								<li class="break"><a href="user-login.jsp">Login</a></li>
-							</ul>
+						<ul>
+								<li>
+									<a href="">Patient Portal</a>
+									<ul>
+										<li><a href="register-case.jsp">Register New Case</a></li>
+										<li><a href='<c:url value="/caseHistory"/>'>Case History</a></li>									</ul>
+								</li>
+										<li class="break"><a href="patient-about-us.jsp">About US</a></li>
+										<li class="break"><a href="patient-contact-us.jsp">Contact Us</a></li>
+										<li class="break"><a href="index.jsp">logout</a></li>	
+									</ul>
 						</nav>
 
 				</div>

@@ -1,20 +1,26 @@
 package main.users.user;
 
-import java.util.Date;
-
 public class MedicalCase {
 
 	private int caseNumber;
 	private String patientEmail;
-	private Doctor doctorEmail;
+	private String doctorEmail;
 	private String disease;
 	private int severityLevel;
 	private String dateCreated;
-	private Date dateResolution;
+	private String dateResolution;
 	private String caseStatus;
 	private int actualSeverity;
 	private String comment;
+	private String docPrescription;
 	
+	
+	public String getDocPrescription() {
+		return docPrescription;
+	}
+	public void setDocPrescription(String docPres) {
+		this.docPrescription = docPres;
+	}
 	public String getComment() {
 		return comment;
 	}
@@ -33,10 +39,10 @@ public class MedicalCase {
 	public void setPatientEmail(String patientEmail) {
 		this.patientEmail = patientEmail;
 	}
-	public Doctor getDoctorEmail() {
+	public String getDoctorEmail() {
 		return doctorEmail;
 	}
-	public void setDoctorEmail(Doctor doctorEmail) {
+	public void setDoctorEmail(String doctorEmail) {
 		this.doctorEmail = doctorEmail;
 	}
 	public String getDisease() {
@@ -57,10 +63,10 @@ public class MedicalCase {
 	public void setDateCreated(String string) {
 		this.dateCreated = string;
 	}
-	public Date getDateResolution() {
+	public String getDateResolution() {
 		return dateResolution;
 	}
-	public void setDateResolution(Date dateResolution) {
+	public void setDateResolution(String dateResolution) {
 		this.dateResolution = dateResolution;
 	}
 	public String getCaseStatus() {

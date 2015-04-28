@@ -28,22 +28,32 @@ public class Register extends HttpServlet{
 		String disease = (String) request.getParameter("disease");
 		String severity = (String) request.getParameter("severity");
 		String message = (String) request.getParameter("message");
-		Patient patient = (Patient) request.getSession().getAttribute("patient");
+		Patient patient = (Patient) request.getSession().getAttribute("user");
 		java.util.Date date= new java.util.Date();
 		int caseId = new Timestamp(date.getTime()).getNanos();
+		String patientEmail = patient.getRegisteredMail();
+		String doctorEmail = patient.getAssigned_doctor();
+		int actualSeverity = 0;
+		String path = request.getServletContext().getRealPath("/WEB-INF/classes/resources/cases");
+		CaseDAO caseDao = CaseDAO.getInstance(path);
 		
 		MedicalCase mCase = new MedicalCase();
-		mCase.setActualSeverity(Integer.parseInt(severity));
+		
+		actualSeverity = caseDao.calculateActualSeverity(patientEmail,disease);
+		
 		mCase.setCaseNumber(caseId);
 		mCase.setDisease(disease);
 		mCase.setSeverityLevel(Integer.parseInt(severity));
 		mCase.setComment(message);
 		mCase.setDateCreated(new SimpleDateFormat("MM/dd/yyyy").format(date));
 		mCase.setCaseStatus("Open");
-		mCase.setPatientEmail(patient.getRegisteredMail());
+		mCase.setPatientEmail(patientEmail);
+		mCase.setDoctorEmail(doctorEmail);
+		mCase.setDateResolution(null);
+		mCase.setActualSeverity(actualSeverity);
+		mCase.setDocPrescription(null);
 		
-		String path = request.getServletContext().getRealPath("/WEB-INF/classes/resources/cases");
-		CaseDAO caseDao = CaseDAO.getInstance(path);
+		
 		if(caseDao.registerCase(mCase))
 		{
 			response.sendRedirect("register-case-success.jsp");

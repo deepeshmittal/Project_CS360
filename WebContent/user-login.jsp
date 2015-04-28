@@ -24,7 +24,6 @@
 				<div id="header" class="container">
 
 					<!-- Logo -->
-						<img id="image_logo" src="images/Minion_Logo.jpg"></img>
 						<h1 id="logo"><a href="index.jsp">Home</a></h1>
 
 					<!-- Nav -->
