@@ -1,4 +1,4 @@
-package main.users.user;
+package main.junit.test;
 
 import static org.junit.Assert.*;
 
@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import main.register.CaseDAO;
+import main.users.user.MedicalCase;
+import main.users.user.RegisteredUser;
 
 import org.junit.Test;
 
