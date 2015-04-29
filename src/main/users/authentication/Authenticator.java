@@ -28,7 +28,7 @@ public class Authenticator {
 		}
 		return authenticator;
 	}
-	
+		
 	public RegisteredUser authenticate(String userName, String pass) throws IOException {
 		
 	   File file = new File(users_file+fileName);

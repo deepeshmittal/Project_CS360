@@ -31,7 +31,7 @@ public class CaseHistory extends HttpServlet{
 		
 		RegisteredUser user = (RegisteredUser) req.getSession().getAttribute("user");
 		
-		String path = req.getServletContext().getRealPath("/WEB-INF/classes/resources/cases");
+		String path = req.getServletContext().getRealPath("/WEB-INF/classes/resources/");
 		CaseDAO caseDao = CaseDAO.getInstance(path);
 		caseList = caseDao.fetchCasesFromDB(caseList, user);
 		

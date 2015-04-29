@@ -1,14 +1,14 @@
 package main.register;
 
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import main.users.user.MedicalCase;
 
 /**
  * Servlet implementation class SendPrescription
@@ -36,11 +36,19 @@ public class SendPrescription extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String docpres = request.getParameter("docpres");
-
+		String docpres = request.getParameter("pres");
+		int caseNum = Integer.parseInt(request.getParameter("caseNumber"));
+		java.util.Date date= new java.util.Date();
+		date.getTime();
+		String resolutionDate = new SimpleDateFormat("MM/dd/yyyy").format(date);
+				
+		String path = request.getServletContext().getRealPath("/WEB-INF/classes/resources/");
+		CaseDAO caseDao = CaseDAO.getInstance(path);
 		
-		//caseDao.editCase();
-		
+		if (caseDao.updatePrescription(caseNum, resolutionDate, docpres)){
+			RequestDispatcher reqDispatcher = request.getRequestDispatcher("doctor-case-history.jsp");
+			 reqDispatcher.forward(request,response);
+		}
 		
 	}
 

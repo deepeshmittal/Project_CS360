@@ -36,7 +36,7 @@ public class Register extends HttpServlet{
 		String patientEmail = patient.getRegisteredMail();
 		String doctorEmail = patient.getAssigned_doctor();
 		int actualSeverity = 0;
-		String path = request.getServletContext().getRealPath("/WEB-INF/classes/resources/cases");
+		String path = request.getServletContext().getRealPath("/WEB-INF/classes/resources/");
 		CaseDAO caseDao = CaseDAO.getInstance(path);
 		
 		MedicalCase mCase = new MedicalCase();

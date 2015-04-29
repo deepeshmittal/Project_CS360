@@ -9,17 +9,28 @@
 		<meta name="keywords" content="" />
 		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
 		
-		<!-- <script type="text/javascript">
-			function sendprescription() {
+		<script type="text/javascript">
+			function sendprescription(caseNumber) {
 				var req = new XMLHttpRequest();
 				
-				var prescription = document.getElementById('docpres').value;
-				
+				var prescription = document.getElementById('docpres'+caseNumber).value;
 				var url = "/newproject_360/sendprescription";
-				req.open("POST",url,false);
-				req.send("pres="+prescription);
+				
+				var params = "pres="+prescription+"&caseNumber="+caseNumber;
+				req.open("POST",url,true);
+				req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+				req.setRequestHeader("Content-length", params.length);
+				req.setRequestHeader("Connection", "close");
+				//document.getElementById('docpres'+caseNumber).value = ${rec.docPrescription};
+				req.onreadystatechange = function() {
+				    if(req.readyState == 4 && req.status == 200) {
+				        alert("Note added to case number:"+caseNumber+" successfully.");
+				    }
+				}
+				
+				req.send(params);
 			}
-		</script>  -->
+		</script> 
 	
 		<script src="js/jquery.min.js"></script>
 		<script src="js/jquery.dropotron.min.js"></script>
@@ -96,8 +107,8 @@
 										    <td>${rec.comment}</td>
 										    <td>
 										    <table>
-										    <tr><textarea name="docpres" id="docpres" placeholder="NA" onfocus="this.placeholder = ''" onblur="this.placeholder = 'NA'"></textarea></tr>
-										    <tr><button type="submit" class="editbtn" >Send</button></tr>
+										    <tr><textarea name="docpres" id="docpres${rec.caseNumber}">${rec.docPrescription}</textarea></tr>
+										    <tr><button type="submit" onClick="sendprescription(${rec.caseNumber})">Add Prescription</button></tr>
 										    </table>
 										    </td>
 										    <td>${rec.actualSeverity}</td>										    

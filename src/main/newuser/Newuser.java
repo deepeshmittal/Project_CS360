@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import main.users.user.Patient;
-import main.users.user.RegisteredUser;
 
 /**
  * Servlet implementation class Newuser
